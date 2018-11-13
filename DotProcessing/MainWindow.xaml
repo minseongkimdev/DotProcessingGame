@@ -1,0 +1,37 @@
+﻿<Controls:MetroWindow x:Class="DotProcessing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DotProcessing"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="DotProcessing" Height="529.5" Width="930.667">
+    <Grid Background="White">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="455*"/>
+            <ColumnDefinition Width="244*"/>
+        </Grid.ColumnDefinitions>
+        <WindowsFormsHost Height="317" Margin="10,10,151,0" VerticalAlignment="Top">
+            <wf:PictureBox x:Name="InputImage" BorderStyle="FixedSingle">
+            </wf:PictureBox>
+        </WindowsFormsHost>
+        <WindowsFormsHost Height="317" Margin="473,10,10,0" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <wf:PictureBox x:Name="OutputImage" BorderStyle="FixedSingle"/>
+        </WindowsFormsHost>
+        <Button x:Name="transbutton" Content="Transfrom" HorizontalAlignment="Left" Margin="531,464,0,0" VerticalAlignment="Top" Width="76" Height="26" Click="TransButton_Click" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="answertext" HorizontalAlignment="Left" Height="23" Margin="406,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding MaskSize, UpdateSourceTrigger=PropertyChanged}"/>
+        <Label x:Name="Size" Content="Write Answer" HorizontalAlignment="Left" Margin="307,433,0,0" VerticalAlignment="Top" Height="26" FontFamily="Segoe UI, Lucida Sans Unicode, Verdana" FontWeight="Bold"/>
+        <WindowsFormsHost Height="147" Margin="186,343,10,0" VerticalAlignment="Top" Grid.Column="1">
+            <wf:PictureBox x:Name="avatarimage"/>
+        </WindowsFormsHost>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="307,474,0,0" VerticalAlignment="Top" Width="219" Minimum="1" Maximum="101" SmallChange="1"/>
+        <Button x:Name="answer" Content="Submit" HorizontalAlignment="Left" Margin="531,433,0,0" VerticalAlignment="Top" Width="76" Height="26" Grid.ColumnSpan="2" Click="answer_button"/>
+        <WindowsFormsHost HorizontalAlignment="Left" Height="62" Margin="188,332,0,0" VerticalAlignment="Top" Width="64">
+            <wf:PictureBox x:Name="nextbtnimage" Click="nextbtn_click"/>
+        </WindowsFormsHost>
+        <Label x:Name="score" Content="0" Grid.Column="1" HorizontalAlignment="Left" Margin="113.4,433,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.312,-0.086"/>
+        <Label x:Name="label" Content="Score : " Grid.Column="1" HorizontalAlignment="Left" Margin="57.4,433,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Controls:MetroWindow>
